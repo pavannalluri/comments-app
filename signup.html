@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .form-container{
+            height: 100vh;
+	        display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-style {
+            width: 400px;
+            height: 500px;
+           
+        }
+
+        button {
+            background-color: lightskyblue;
+            height: 40px;
+            border-radius: 5px;
+        }
+
+        label {
+            float: left;
+            font-size: 20px;
+        }
+
+        button {
+            width: 100%;
+            font-size: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        #forgot {
+            float: right;
+        }
+
+        input {
+            width: 400px;
+            height: 35px;
+            background-color: lightgrey;
+            box-sizing: border-box;
+        }
+        i{
+            float: left;
+        }
+        #signup,h1{
+            text-align: center;
+        }
+    </style>
+   
+</head>
+
+<body>
+    <div class="form-container">
+        <form class="form-style">
+            <h1>Sign Up</h1>
+            <label for="email">Email</label><br>
+            <input type="email"  id="email" required>
+            <br><br>
+            <label for="psw">Password</label><br>
+            <input type="password"  id="psw" required>
+            <br><br>
+            <label for="secret">Secret</label>
+            <input type="text" name="secret" id="secret"><br><br>
+            <h6 align="center">By clicking signup you are agreeing to the Terms and Conditions.</h6>
+            <button type="submit" class="btn" onclick="writeUSerData()"><i class="fa fa-lock" style="font-size: 20px;"></i>Sign Up</button>
+        </form>
+    </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
+        import { getDatabase } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-database.js";
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyC6XiGzfVtixz-4LQlfNfLC9-rMcZrbOXo",
+          authDomain: "comments-84b67.firebaseapp.com",
+          databaseURL:"https://comments-84b67-default-rtdb.firebaseio.com/",
+          projectId: "comments-84b67",
+          storageBucket: "comments-84b67.appspot.com",
+          messagingSenderId: "19059367581",
+          appId: "1:19059367581:web:002fb093bb810456013e74"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database=getDatabase(app);
+        writeUSerData()
+      </script>
+    
+</body>
+
+</html>
+           
+         
